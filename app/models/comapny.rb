@@ -1,9 +1,9 @@
 class Comapny < ApplicationRecord
-	after_create :create_tenant
+	# after_create :create_tenant
 
-	private
-	
-		def create_tenant
-			Apartment::Tenant.create(subdomain)
-		end
+	# private
+
+	# 	def create_tenant
+	# 		Apartment::Tenant.create(subdomain)
+	# 	end
 end

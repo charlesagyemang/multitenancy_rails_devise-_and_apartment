@@ -48,6 +48,7 @@ Apartment.configure do |config|
   # end
   #
   config.tenant_names = lambda { Comapny.pluck :subdomain }
+  Apartment::Elevators::Subdomain.excluded_subdomains = ['www']
 
   #
   # ==> PostgreSQL only options
