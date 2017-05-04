@@ -1,5 +1,20 @@
+class SubdomainConstraints
+
+  def self.matches?(request)
+    request.subdomain.present? && request.subdomain != 'www'
+  end
+
+end
+
 Rails.application.routes.draw do
-  resources :projects
-  resources :comapnies
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  devise_for :media_houses, :controllers => { registrations: 'registrations' }
+  constraints SubdomainConstraints do
+    resources :tasks
+    resources :workers
+    root 'welcome#index'
+  end
+
+
+
 end
