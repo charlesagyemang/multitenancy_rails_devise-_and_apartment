@@ -1,3 +1,7 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
-<%= @media_house.subdomain %>
+Click <a href="<%= @media_house.url %>">here</a> to enter your custom domain
+
+<%= @path %>
+
+<%= link_to "Sign out", destroy_media_house_session_path, :method => :delete %>
